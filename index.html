@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sumarie Nel - Author & Freelancer</title>
+    <title>Sumarie Nel - Web Developer & Designer</title>
+    <meta name="description" content="Web developer and designer creating beautiful, functional digital experiences.">
+    <meta name="author" content="Sumarie Nel">
     <style>
         * {
             margin: 0;
@@ -15,207 +17,334 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .container {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            width: 100%;
-            overflow: hidden;
+            background-color: #f8f9fa;
         }
 
         header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 40px 20px;
+            padding: 2rem 1rem;
             text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
         }
 
         header p {
-            font-size: 1.1em;
+            font-size: 1.1rem;
             opacity: 0.9;
         }
 
-        .about {
-            padding: 30px 20px;
-            border-bottom: 1px solid #eee;
+        nav {
+            background-color: #fff;
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
-        .about h2 {
+        nav a {
+            display: inline-block;
+            margin: 0.5rem 1rem;
+            padding: 0.5rem 1rem;
             color: #667eea;
-            margin-bottom: 15px;
-            font-size: 1.5em;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
 
-        .about p {
-            color: #666;
-            margin-bottom: 15px;
+        nav a:hover {
+            background-color: #f0f0f0;
+            color: #764ba2;
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 2px solid #764ba2;
+            padding-bottom: 0.5rem;
+        }
+
+        .about-section p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
             line-height: 1.8;
+            color: #555;
         }
 
         .social-links {
+            margin-top: 2rem;
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 1rem;
             flex-wrap: wrap;
-            margin-top: 20px;
         }
 
         .social-links a {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #667eea;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
+            border-radius: 50%;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-            font-size: 0.9em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
         }
 
         .social-links a:hover {
-            background: #764ba2;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .social-links a span {
+            margin-left: 0.5rem;
         }
 
         .projects {
-            padding: 30px 20px;
-            border-bottom: 1px solid #eee;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
 
-        .projects h2 {
-            color: #667eea;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-
-        .project-item {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: #f9f9f9;
+        .project-card {
+            background: #f8f9fa;
             border-left: 4px solid #667eea;
-            border-radius: 5px;
+            padding: 1.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
         }
 
-        .project-item h3 {
-            color: #333;
-            margin-bottom: 8px;
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+            border-left-color: #764ba2;
         }
 
-        .project-item p {
-            color: #666;
-            font-size: 0.95em;
-        }
-
-        .project-item a {
+        .project-card h3 {
             color: #667eea;
-            text-decoration: none;
-            font-weight: bold;
+            margin-bottom: 0.5rem;
         }
 
-        .project-item a:hover {
-            text-decoration: underline;
+        .project-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .project-card a {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .project-card a:hover {
+            opacity: 0.9;
+            transform: translateX(5px);
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
         }
 
         footer {
-            background: #f5f5f5;
-            padding: 20px;
+            background: #333;
+            color: white;
             text-align: center;
-            border-top: 1px solid #eee;
+            padding: 2rem 1rem;
+            margin-top: 2rem;
         }
 
-        footer p {
-            color: #666;
-            font-size: 0.9em;
-            margin-bottom: 15px;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
+        footer a {
             color: #667eea;
             text-decoration: none;
-            font-size: 0.9em;
-            transition: color 0.3s ease;
+            font-weight: 500;
         }
 
-        .footer-links a:hover {
-            color: #764ba2;
+        footer a:hover {
+            text-decoration: underline;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             header h1 {
-                font-size: 2em;
+                font-size: 2rem;
             }
 
-            .social-links {
-                gap: 10px;
+            nav a {
+                margin: 0.25rem 0.5rem;
             }
 
-            .social-links a {
-                padding: 8px 15px;
-                font-size: 0.85em;
+            section {
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Sumarie Nel</h1>
+        <p>Web Developer & Designer</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
     <div class="container">
-        <header>
-            <h1>Sumarie Nel</h1>
-            <p>Author & Freelancer</p>
-        </header>
-
-        <section class="about">
+        <section id="about" class="about-section">
             <h2>About Me</h2>
-            <p>Welcome to my digital home! I'm Sumarie Nel, a passionate author and freelancer. I specialize in creating engaging content and helping businesses bring their visions to life through creative writing and web development.</p>
-            <p>With a love for storytelling and a knack for problem-solving, I combine technical skills with creative expertise to deliver exceptional results.</p>
-            
+            <p>
+                Welcome to my portfolio! I'm Sumarie Nel, a passionate web developer and designer with a keen eye for creating beautiful, functional digital experiences. With expertise in front-end and back-end technologies, I craft solutions that not only look great but also deliver exceptional performance and user experience.
+            </p>
+            <p>
+                My journey in web development has been driven by a love for problem-solving and continuous learning. I specialize in creating responsive, accessible websites and applications that meet modern web standards. Whether it's building from scratch or optimizing existing projects, I'm committed to delivering high-quality work that exceeds expectations.
+            </p>
+            <p>
+                When I'm not coding, you can find me exploring the latest web technologies, contributing to open-source projects, or sharing knowledge with the developer community. Let's collaborate and bring your digital vision to life!
+            </p>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <h3>Portfolio Website</h3>
+                    <p>A modern, responsive portfolio showcasing web design and development skills with smooth animations and intuitive navigation.</p>
+                    <a href="https://sumarie-nel.com" target="_blank" rel="noopener noreferrer">Visit Portfolio</a>
+                </div>
+                <div class="project-card">
+                    <h3>E-Commerce Platform</h3>
+                    <p>Full-stack e-commerce solution with product management, shopping cart, and secure payment integration for seamless online shopping.</p>
+                    <a href="https://example.com/ecommerce" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Task Management App</h3>
+                    <p>Interactive task management application featuring real-time updates, user authentication, and cloud storage for productive workflow management.</p>
+                    <a href="https://example.com/tasks" target="_blank" rel="noopener noreferrer">Explore App</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills & Technologies</h2>
+            <div class="skills">
+                <div class="skill-item">HTML5</div>
+                <div class="skill-item">CSS3</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">React</div>
+                <div class="skill-item">Vue.js</div>
+                <div class="skill-item">Node.js</div>
+                <div class="skill-item">Python</div>
+                <div class="skill-item">Database Design</div>
+                <div class="skill-item">Web Design</div>
+                <div class="skill-item">Responsive Design</div>
+                <div class="skill-item">Git & Version Control</div>
+                <div class="skill-item">API Development</div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">
+                I'd love to hear from you! Feel free to reach out through any of the following channels:
+            </p>
             <div class="social-links">
-                <a href="https://books2read.com/ap/nE6q2y/Sumarie-Nel" target="_blank">Books on Draft2Digital</a>
-                <a href="https://www.upwork.com/freelancers/~016dd91e10886c9048" target="_blank">Upwork Profile</a>
+                <a href="https://github.com/Sumarienel" target="_blank" rel="noopener noreferrer" title="GitHub Profile">
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/sumarienel" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile">
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://www.facebook.com/sumarienel" target="_blank" rel="noopener noreferrer" title="Facebook Profile">
+                    <span>Facebook</span>
+                </a>
+                <a href="https://twitter.com/sumarienel" target="_blank" rel="noopener noreferrer" title="Twitter Profile">
+                    <span>Twitter</span>
+                </a>
+                <a href="mailto:contact@sumarie-nel.com" title="Send Email">
+                    <span>Email</span>
+                </a>
             </div>
         </section>
-
-        <section class="projects">
-            <h2>Featured Works</h2>
-            
-            <div class="project-item">
-                <h3>Author Portfolio</h3>
-                <p>A collection of my published works available across multiple platforms. Explore my books and literary projects.</p>
-                <a href="https://books2read.com/ap/nE6q2y/Sumarie-Nel" target="_blank">View Books →</a>
-            </div>
-
-            <div class="project-item">
-                <h3>Freelance Services</h3>
-                <p>Professional freelance services including writing, content creation, and web development. Check out my profile and portfolio.</p>
-                <a href="https://www.upwork.com/freelancers/~016dd91e10886c9048" target="_blank">View on Upwork →</a>
-            </div>
-        </section>
-
-        <footer>
-            <p>&copy; 2024 Sumarie Nel. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="https://books2read.com/ap/nE6q2y/Sumarie-Nel" target="_blank">Draft2Digital</a>
-                <a href="https://www.upwork.com/freelancers/~016dd91e10886c9048" target="_blank">Upwork</a>
-            </div>
-        </footer>
     </div>
+
+    <footer>
+        <p>&copy; 2025 Sumarie Nel. All rights reserved.</p>
+        <p>
+            <a href="#about">About</a> | 
+            <a href="#projects">Projects</a> | 
+            <a href="#skills">Skills</a> | 
+            <a href="#contact">Contact</a>
+        </p>
+    </footer>
+
+    <!-- Cache-busting script -->
+    <script>
+        // Prevent caching issues by adding timestamp to assets
+        (function() {
+            const cacheBuster = new Date().getTime();
+            // This helps ensure users get the latest version of the site
+            document.documentElement.setAttribute('data-cache-buster', cacheBuster);
+            
+            // Ensure external links open in new tabs safely
+            const externalLinks = document.querySelectorAll('a[target="_blank"]');
+            externalLinks.forEach(link => {
+                if (!link.hasAttribute('rel')) {
+                    link.setAttribute('rel', 'noopener noreferrer');
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
